@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="content">
+    <h3> Delivery information </h3>
+    <br>
+      <form class="form-inline">
+        <label for="name">Name: </label>
+      <div class="form-group">
+        <input type="text" class="form-control" id="name" value="{{this.userName}}" required>
+      </div>
+      <label for="address">Address: </label>
+      <div class="form-group">
+        <input type="text" class="form-control" id="address"  value="{{this.userAddress}}" required>
+      </div>
+      <label for="name">Contact: </label>
+      <div class="form-group">
+        <input type="text" class="form-control" id="tel" placeholder="phone number" required>
+      </div>
+      <div>
+        <h5> Articles Account : {{ this.totalCount }}</h5>
+      </div>
+      <div>
+        <h5>Total Price: {{ this.totalPrice | currency }}</h5>
+      </div>
+      <div class="checkbox">
+        <label><input type="checkbox"> Yes, I confirm the information </label>
+      </div>
+      <div class="buttons-container">
+        <div class="buttons">
+          <button class="btn  achat" (click)="goToPayment()" > Go to Payment </button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="map">
+    <h3> Choose Your Address On Map"</h3>
+    <br>
+    <app-map [order]="order"></app-map>
+  </div>
+
+</div>

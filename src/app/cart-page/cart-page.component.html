@@ -1,0 +1,60 @@
+<div class="wrapper">
+<div>
+  <p class="mb-0"><span class="text-muted">You have {{cart.totalCount}} items  in your cart</span></p> <!--Nombre Articles dans Cart-->
+</div>
+<div class="card mb-3" *ngIf="cart && cart.items.length">
+  <div class="card-body" *ngFor="let cartItem of cart.items" >
+    <div class="d-flex justify-content-between">
+      <div class="d-flex flex-row align-items-center">
+        <div>
+          <img src="../assets/photoBGStyle/{{cartItem.article.photo}}"
+          class="img-fluid rounded-3"
+          alt="Shopping item"
+          style="width: 65px" >
+        </div>
+        <div class="ms-3">
+          <h5> <a href="/articles/{{cartItem.article.id_article}}"> {{cartItem.article.nom}}</a></h5>
+          <p class="small mb-0">{{cartItem.article.couleur}} {{cartItem.article.taille}}</p>
+        </div>
+      </div>
+      <div class="d-flex flex-row align-items-center">
+        <div style="width: 120px">
+          <select #quantitySelect
+        [value]="cartItem.quantity"
+        (change)="changeQuantity(cartItem, quantitySelect.value)">
+        <option>0</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        </select>
+        </div>
+        <div style="width: 100px">
+          <h5 class="fw-normal mb-0">{{cartItem.quantity}}</h5>
+        </div>
+        <div style="width: 100px">
+          <h5 class="mb-0">$ {{cartItem.price }}</h5>
+        </div >
+        <div  style="width: 100px">
+          <button (click)="removeFromCart(cartItem)">
+            <a style="color: #d65959"><i class="fas fa-trash-alt"></i></a>
+          </button>
+        </div>
+      </div>
+      </div>
+    </div>
+    </div>
+<h5> Total Count: {{cart.totalCount}}</h5>
+<h5> Total Price: {{cart.totalPrice | currency}}</h5>
+<br>
+<br>
+<div class="d-flex justify-content-center">
+  <button type="button"  class="btn btn-warning btn-block btn-lg" (click)="goToPayment()">
+    <div class="d-flex justify-content-between">
+  <span> Validate <i class="fas fa-long-arrow-alt-right ms-2"></i></span>
+</div>
+  </button>
+</div>
+</div>
+

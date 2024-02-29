@@ -1,0 +1,61 @@
+<section class="padding-y">
+  <div class="container">
+    <div class="row">
+      <aside class="col-lg-4">
+        <article class="gallery-wrap">
+          <div class="img-wrap img-thumbnail">
+            <span class="topbar">
+              <b class="badge bg-success prix1">{{ item.prix | currency}} </b>
+            </span>
+            <a data-fslightbox="mygalley" data-type="image" [href]="item.photo" >
+              <img width="100%" src="../assets/photoBGStyle/{{item.photo}}">
+            </a>
+          </div> <!-- img-big-wrap.// -->
+        </article> <!-- gallery-wrap .end// -->
+        <main class="col-lg-12">
+          <article class="ps-lg-3">
+            <h3 class="title text-dark">{{ item.nom }}</h3>
+            <div class="rating-wrap my-3">
+              <ul class="rating-stars">
+                <li style="width:80%" class="stars-active"> <img src="assets/images/misc/stars-active.svg" alt=""> </li>
+                <li> <img src="assets/images/misc/starts-disable.svg" alt=""> </li>
+              </ul>
+              <b class="label-rating new h5">New product</b>
+              <i class="dot"></i>
+              <i class="dot"></i>
+              <i class="dot"></i>
+              <span class="label-rating text-success h5">In stock</span>
+            </div> <!-- rating-wrap.// -->
+            <p>Maecenas ornare auctor quam cursus vehicula.
+              Nulla dictum elementum varius. Nunc a dui sapien.
+              Vivamus lacus mauris, lobortis id lorem sed, ornare interdum lorem.
+              Phasellus faucibus ultrices nisl in pellentesque.
+              Ut ornare, nulla sit amet interdum mollis, metus risus ullamcorper ligula, eu malesuada nisi est nec ex.
+              Curabitur aliquam nibh a tortor placerat convallis. Quisque sollicitudin quis mi id pharetra.
+            </p>
+            <div class="mb-3">
+              <var class="price h3">{{ item.prix | currency}}</var>
+            </div>
+            <dl class="row">
+              <dt class="col-3 h4">Colors : </dt>
+              <dd class="col-9 h5">{{ item.couleurs }}</dd>
+              <dt class="col-3 h4">Sizes: </dt>
+              <dd class="col-9 h5">{{item.tailles}} </dd>
+            </dl>
+          </article> <!-- product-info-aside .// -->
+        </main> <!-- col.// -->
+      </aside>
+  <!-- =================== COMPONENT ADDINGS ====================== -->
+      <aside class="col">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">All items</h3>
+            <div class="row">
+              <app-article class="col-4" style="max-width: 50%" *ngFor="let articleElementOfArray of articles" [article]="articleElementOfArray"></app-article>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>

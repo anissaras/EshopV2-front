@@ -1,0 +1,49 @@
+<div class="pageCon corp">
+  <div class="wrapper">
+      <div class="col-sm-12 col-lg-12">
+      <h2> Send your claim </h2>
+      </div>
+      <div class="row">
+          <div class="col-md-12">
+              <div class="well well-sm">
+                  <form action="https://formspree.io/f/mnqynkgz" method="post">
+                  <div class="row">
+                      <div class="col-md-6">
+                          <label for="name">Name</label>
+                          <div class="form-group">
+                              <input type="text" name="Name" id="name" placeholder="Enter name" required="required" />
+                          </div>
+                          <label for="email">Email Address</label>
+                          <div class="form-group">
+                              <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
+                              </span>
+                              <input type="email" id="email" name="Email" placeholder="Enter email" required="required" />
+                          </div>
+                          <label for="subject">Subject</label>
+                          <div class="form-group">
+                              <select id="subject" name="Subject" class="form-control" required="required">
+                                  <option value="na" selected="">Choose One:</option>
+                                  <option value="service">General Customer Service</option>
+                                  <option value="suggestions">Suggestions</option>
+                                  <option value="product">Product Support</option>
+                                  <option value="product">Others</option>
+                              </select>
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                          <label for="name">Message</label>
+                          <div class="form-group">
+                              <textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required"
+                                  placeholder="Message"></textarea>
+                          </div>
+                      </div>
+                      <div class="col-md-12">
+                          <button type="submit" class="btn pull-right" id="btnClaim">Send</button>
+                      </div>
+                  </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+  </div>

@@ -1,0 +1,16 @@
+<figure class="card card-product-grid">
+  <p class="img-wrap img-thumbnail">
+    <img width="100%" src="../assets/photoBGStyle/{{article.photo}}"/>
+  </p>
+  <figcaption class="info-wrap border-top">
+    <p class="float-end btn btn-light btn-icon">
+      <i class="fa fa-heart"></i>
+    </p>
+    <p class="title text-uppercase fw-bold modele2">{{ article.nom }}</p>
+    <p> </p>
+    <small class="text-body modele2">Color: {{ article.couleur }} </small>
+    <div>
+      <button class="btn btn-dark" (click)="onViewArticle()">View</button>
+    </div>
+  </figcaption>
+</figure>

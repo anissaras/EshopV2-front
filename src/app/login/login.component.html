@@ -1,0 +1,30 @@
+<section class="pageCon corp">
+  <div class="wrapper formLog">
+    <div class="logo">
+
+      <img src="/assets/images/logo.jpeg" alt="Logo" />
+    </div>
+    <div class="text-center mt-4 name h3">BG-Style</div>
+    <div class="texte1"> <p>Devenez Client pour ne plus passer à côté des promotions, des offres, des remises et des bons de réduction.</p></div>
+    <form  [formGroup]="loginFrom" (ngSubmit)="submit()"
+    class="p-3 mt-3">
+      <div class="form-field d-flex align-items-center">
+        <span class="fa fa-user"></span>
+        <input formControlName="email"
+        type="text" name="userName" id="userName" placeholder="Email" required />
+      </div>
+      <div class="form-field d-flex align-items-center">
+        <span class="fa fa-key"></span>
+        <input formControlName="password"
+        type="password" name="password" id="pwd" placeholder="Password" required />
+      </div>
+      <button type="submit"
+      class="btn log">Login</button>
+    </form>
+    <div class="text-center fs-6">
+      <a>Forget password?</a> or
+      <a routerLink="/register"  [queryParams]="{returnUrl: returnUrl}"
+      routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Sign up</a>
+    </div>
+  </div>
+  </section>

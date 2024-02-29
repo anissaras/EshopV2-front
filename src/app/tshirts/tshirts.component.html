@@ -1,0 +1,12 @@
+<section class="padding-top">
+  <div class="container">
+    <header class="section-heading">
+      <h3 class="section-title">All T-shirts</h3>
+    </header>
+    <div class="row">
+        <app-item class="col-4" style="max-width: 50%" *ngFor="let itemElementOfArray of items" [hidden]="itemElementOfArray.categorie !=='Tshirts'" [item]="itemElementOfArray"></app-item>
+    </div>
+  </div>
+  <!-- container end.// -->
+</section>
+

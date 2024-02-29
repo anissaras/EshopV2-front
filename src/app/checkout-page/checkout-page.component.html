@@ -1,0 +1,91 @@
+<section class="h-100 h-custom">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col">
+          <div class="p-4">
+            <div class="row">
+              <div class="col-lg-3">
+
+              </div>
+              <div class="col-lg-6">
+                <div class="card bg-dark text-white rounded-0">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                      <h4 class="mb-0 text-white">Card details</h4>
+                      <img src="/assets/images/logo.jpeg"
+                        class="img-fluid rounded-0" style="width: 80px;" alt="Logo">
+                    </div>
+
+                    <p class="medium mb-5">Card type</p>
+                    <span class="text-white"><i
+                        class="fab fa-cc-mastercard fa-2x me-2"></i></span>
+                    <span class="text-white"><i
+                        class="fab fa-cc-visa fa-2x me-2"></i></span>
+                    <span class="text-white"><i
+                        class="fab fa-cc-amex fa-2x me-2"></i></span>
+                    <span class="text-white"><i class="fab fa-cc-paypal fa-2x"></i></span>
+
+                    <form  class="mt-4" [formGroup]="checkoutForm"  (ngSubmit)="submit()">
+                      <div class="form-outline form-white mb-4">
+                        <input type="text" id="C_Nom" class="form-control form-control-lg rounded-0"
+                        siez="17" placeholder="Cardholder's Name"
+                         formControlName="C_Nom" />
+                        <label type="text" name="C_Nom" id="C_Nom"
+                         class="form-label" for="C_Nom">Cardholder's Name</label>
+                      </div>
+
+                      <div class="error-list" *ngIf="fc['C_Nom'].errors && isSubmitted ">
+                        <div *ngIf="fc['C_Nom'].errors['required']">C_Nom Should not be empty </div>
+                      </div>
+                      <div class="form-outline form-white mb-4">
+                        <input type="text" name="C_Num" id="C_Num" formControlName="C_Num"
+                         class="form-control form-control-lg rounded-0"   placeholder="xxxx xxxx xxxx xxxx" />
+                        <label class="form-label" for="C_Num">Card Number</label>
+                      </div>
+                      <div class="error-list" *ngIf=" fc['C_Num'].errors && isSubmitted ">
+                        <div *ngIf="fc['C_Num'].errors['required']"> C_Num Should not be empty </div>
+                      </div>
+                      <div class="row mb-4">
+                        <div class="col-md-6">
+                          <div class="form-outline mb-4">
+                            <input type="text" name="C_Exp" id="C_Exp"
+                            formControlName="C_Exp"
+                            placeholder="MM/YYYY" size="7" class="form-control form-control-lg rounded-0" />
+                            <label class="form-label" for="C_Exp">Expiration</label>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-outline mb-4">
+                            <input type="text" name="C_Cvv" id="C_Cvv" formControlName="C_Cvv"
+                            placeholder="&#9679;&#9679;&#9679;"  minlength="3"  class="form-control form-control-lg rounded-0" />
+                            <label class="form-label" for="C_Cvv">Cvv </label>
+                          </div>
+                        </div>
+                      </div>
+                      <hr class="my-4">
+                      <div class="d-flex justify-content-between mb-4">
+                        <h6 class="mb-2 text-white">Subtotal: </h6>
+                        <h6 class="mb-2 text-white">{{this.subTotal}} </h6>
+                      </div>
+                      <div class="d-flex justify-content-between mb-4">
+                        <h6 class="mb-2 text-white">total Price: </h6>
+                        <h6 class="mb-2 text-white">{{this.subTotal2! | currency}}</h6>
+                      </div>
+                      <div class="d-flex justify-content-center">
+                        <button type="button"  type="submit" class="btn btn-warning btn-block btn-lg rounded-0">
+                          <div class="d-flex justify-content-between">
+                        <span>Checkout <i class="fas fa-long-arrow-alt-right ms-2"></i></span>
+                      </div>
+                        </button>
+                      </div>
+                    </form>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>

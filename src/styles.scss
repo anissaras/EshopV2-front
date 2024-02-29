@@ -1,0 +1,21 @@
+.new {
+  color: #EF9B0F;
+}
+
+.modele2{
+  font-size: large;
+}
+
+.achat{
+  background-color: #EF9B0F;
+  border-radius: 5px;
+  color: white;
+}
+
+@media(max-width: 200px) {
+  .corp {
+      margin: 30px 20px;
+      padding: 15px 15px 15px 15px;
+      margin-bottom: 90%;
+  }
+}

@@ -1,0 +1,21 @@
+<figure class="card card-product-grid">
+  <p class="img-wrap">
+    <span class="topbar">
+      <b class="badge bg-success prix1">{{ item.prix | currency }} </b>
+    </span>
+    <img src="../assets/photoBGStyle/{{item.photo}}" />
+  </p>
+  <figcaption class="info-wrap border-top">
+    <p class="float-end btn btn-light btn-icon">
+      <i class="fa fa-heart"></i>
+    </p>
+    <p class="title text-uppercase fw-bold modele1">{{ item.nom }}</p>
+    <small class="text-body modele2">Sizes: {{ item.tailles }} </small>
+    <p> </p>
+    <small class="text-body modele2">Color: {{ item.couleurs }} </small>
+    <div>
+      <button class="btn btn-dark" (click)="onViewItem()">View</button>
+    </div>
+  </figcaption>
+</figure>
+

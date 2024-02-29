@@ -1,0 +1,95 @@
+<!-- ============== SECTION CONTENT ============== -->
+<section class="padding-y">
+  <div class="container">
+    <div class="row">
+      <aside class="col-lg-3">
+        <article class="gallery-wrap">
+          <div class="img-wrap img-thumbnail">
+            <a data-fslightbox="mygalley" data-type="image" href="../assets/photoBGStyle/{{article.photo}}">
+              <img width="100%" src="../assets/photoBGStyle/{{article.photo}}">
+            </a>
+          </div> <!-- img-big-wrap.// -->
+        </article> <!-- gallery-wrap .end// -->
+      </aside>
+      <main class="col">
+        <article class="ps-lg-3">
+          <h3 class="title text-dark">{{ article.nom }}</h3>
+          <div class="rating-wrap my-3">
+            <ul class="rating-stars">
+              <li style="width:80%" class="stars-active"> <img src="assets/images/misc/stars-active.svg" alt=""> </li>
+              <li> <img src="assets/images/misc/starts-disable.svg" alt=""> </li>
+            </ul>
+            <b class="label-rating new h5">New product</b>
+            <i class="dot"></i>
+            <i class="dot"></i>
+            <i class="dot"></i>
+            <span class="label-rating text-success h5">In stock</span>
+          </div> <!-- rating-wrap.// -->
+          <p>
+          Donec consequat eleifend finibus. Proin suscipit rhoncus urna sed maximus.
+          Maecenas vitae convallis sapien, eget consectetur nibh. Mauris non tincidunt ex, vel molestie nisi.
+          Aliquam at tortor felis. Vestibulum eu erat ac nulla vulputate posuere non vitae nisl. Nullam massa erat, rhoncus eu lobortis eget, posuere vitae arcu. Aliquam rutrum est non tincidunt pulvinar. Morbi vitae placerat libero, non tincidunt felis.
+          Mauris lorem quam, euismod ac lacus sed, venenatis molestie orci. Nulla facilisi.
+          </p>
+          <dl class="row">
+            <dt class="col-3 h4">Colors : </dt>
+            <dd class="col-9 h5">{{ article.couleur }}</dd>
+          </dl>
+          <dl class="row">
+            <dt class="col-3 h4">Price : </dt>
+            <dd class="col-9 h5">{{ ItemsObservable.prix | currency}}</dd>
+          </dl>
+        <hr>
+        <div class="row mb-4">
+          <div class="col-md-4 col-6 mb-2">
+            <label class="form-label h5">Size</label>
+            <select class="form-select">
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+          </div> <!-- col.// -->
+        <div class="col-md-4 col-6 mb-3 h5">
+        <label class="form-label d-block">Quantity</label>
+        <div class="input-group input-spinner">
+          <button class="btn btn-icon btn-light" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#999" viewBox="0 0 24 24">
+              <path d="M19 13H5v-2h14v2z"></path>
+            </svg>
+          </button>
+          <input class="form-control text-center" placeholder="" value="01">
+            <button class="btn btn-icon btn-light" type="button">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#999" viewBox="0 0 24 24">
+                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path>
+              </svg>
+            </button>
+        </div> <!-- input-group.// -->
+      </div> <!-- col.// -->
+    </div> <!-- row.// -->
+    <button class="btn  achat" (click)="procedeToBuy()"  > Buy now </button>
+    <button class="btn  btn-primary" (click)="addToCart()"> <i class="me-1 fa fa-shopping-basket"></i> Add to cart </button>
+  </article> <!-- product-info-aside .// -->
+</main> <!-- col.// -->
+</div> <!-- row.// -->
+</div> <!-- container .//  -->
+</section>
+
+<!-- ============== SECTION  ============== -->
+<section class="padding-y bg-light border-top">
+<div class="container">
+  <div class="row">
+    <aside class="col">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title">Matching Articles</h3>
+          <div class="row">
+            <app-article class="col-4" style="max-width: 50%" *ngFor="let articleElementOfArray of articleMatch" [article]="articleElementOfArray"></app-article>
+          </div> <!-- card-body .// -->
+        </div> <!-- card .// -->
+      </div>
+   </aside> <!-- col.// -->
+  </div>
+ <br><br>
+</div>
+</section>

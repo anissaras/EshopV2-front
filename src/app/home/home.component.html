@@ -1,0 +1,42 @@
+<!-- ================ SECTION INTRO ================ -->
+<section class="principal corp">
+  <!-- ================ SECTION INTRO ================ -->
+    <section class="section-intro pt-3">
+    <div class="container">
+      <div class="row gx-3">
+        <main class="col-lg-9">
+          <article class="card-banner p-5 pub1" style="height: 350px">
+            <div style="max-width: 500px">
+
+            </div>
+          </article>
+        </main>
+        <aside class="col-lg-3">
+          <article class="card-banner h-100 pub2">
+            <div class="card-body text-center">
+                  <h5 class="mt-3 text-dark">Great deal</h5>
+                   <p class="text-dark">No matter how far along you are in your sophistication</p>
+                  <a href="#" class="btn btn-outline-dark btn1"> View more </a>
+                </div>
+          </article>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================ SECTION INTRO END.// ================ -->
+  </section>
+
+  <!-- ================ SECTION PRODUCTS ================ -->
+      <section class="padding-top principal">
+    <div class="container">
+      <header class="section-heading">
+        <h3 class="section-title">Results:</h3>
+      </header>
+      <div class="row">
+          <app-item class="col-4" style="max-width: 50%" *ngFor="let itemElementOfArray of items" [item]="itemElementOfArray"></app-item>
+      </div>
+    </div>
+    <!-- container end.// -->
+  </section>
+  <!-- ================ SECTION PRODUCTS END.// ================ -->
